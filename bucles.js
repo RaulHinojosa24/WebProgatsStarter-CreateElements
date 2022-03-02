@@ -34,11 +34,38 @@ for (let i = 0; i < numGatos; i++) {
 
 // Ejercicio1: Si el número de gatos es 0; cambiar el texto por “No hay gatos por adoptar, felicidades!”
 
+const mensajeAdopcion = document.querySelector("#mensaje-adopcion");
 
-// Ejercicio2: Fíjate que ahora en el código hay 3 variables boleanas. Muestra cada uno de los botones de “Contactar”, solo en función de si cada una de las chicas está disponible. Es decir, en esta configuración, el botón de "Verónica" debería desaparecer. Pista: piensa que propiedad de .style tienes que modificar para ocultar, mediante CSS, el botón de la chica correspoiente.
+if (numGatos == 0) {
+    mensajeAdopcion.textContent = "No hay gatos por adoptar, felicidades!";
+}
+
+// Ejercicio2: Fíjate que ahora en el código hay 3 variables booleanas. Muestra cada uno de los botones de “Contactar”, solo en función de si cada una de las chicas está disponible. Es decir, en esta configuración, el botón de "Verónica" debería desaparecer. Pista: piensa que propiedad de .style tienes que modificar para ocultar, mediante CSS, el botón de la chica correspoiente.
+
+
 
 let patriciaDisponible = true;
 let veronicaDisponible = false;
 let edurneDisponible = true;
 
-
+if (!patriciaDisponible) {
+    let botonPatricia = document.querySelector(".card__patricia button");
+    botonPatricia.style.display = "none";                       // simple
+    // botonPatricia.style.backgroundColor = "red";
+    // botonPatricia.textContent = "No disponible";             // too extra
+    // botonPatricia.style.cssText += "pointer-events: none;";
+}
+if (!veronicaDisponible) {
+    let botonVeronica = document.querySelector(".card__veronica button");
+    botonVeronica.style.display = "none";                       // simple
+    // botonVeronica.style.backgroundColor = "red";
+    // botonVeronica.textContent = "No disponible";             // too extra
+    // botonVeronica.style.cssText += "pointer-events: none;";
+}
+if (!edurneDisponible) {
+    let botonEdurne = document.querySelector(".card__edurne button");
+    botonEdurne.style.display = "none";                         // simple
+    // botonEdurne.style.backgroundColor = "red";
+    // botonEdurne.textContent = "No disponible";               // too extra
+    // botonEdurne.style.cssText += "pointer-events: none;";
+}
